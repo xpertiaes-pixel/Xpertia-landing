@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Xpertia - Soluciones de IA para Autónomos y PYMES</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style type="text/tailwindcss">
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .hero {
+      background: linear-gradient(to right, #1e0a3c, #000000);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      z-index: 1;
+      animation: slow-pan 20s linear infinite alternate;
+    }
+    @keyframes slow-pan {
+      0% { transform: scale(1) translateX(0); }
+      100% { transform: scale(1.1) translateX(-20px); }
+    }
+    .hero-content {
+      z-index: 2;
+      position: relative;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn {
+      border-radius: 9999px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-primary {
+      background-color: #8A2BE2;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #9932CC;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(138, 43, 226, 0.4);
+    }
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid #8A2BE2;
+      color: #8A2BE2;
+    }
+    .btn-secondary:hover {
+      background-color: #8A2BE2;
+      color: white;
+    }
+    .section {
+      padding: 6rem 1rem;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #8A2BE2;
+    }
+    .icon {
+      font-size: 2.5rem;
+      color: #8A2BE2;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabecera -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-white">Xpertia</h1>
+      <nav class="hidden md:flex space-x-8">
+        <a class="text-gray-300 hover:text-white transition" href="#dolor">Problemas</a>
+        <a class="text-gray-300 hover:text-white transition" href="#soluciones">Soluciones</a>
+        <a class="text-gray-300 hover:text-white transition" href="#beneficios">Beneficios</a>
+        <a class="text-gray-300 hover:text-white transition" href="#how-we-work">Cómo trabajamos</a>
+      </nav>
+      <a class="btn btn-primary hidden md:inline-flex" href="#contacto">Agenda tu sesión gratuita</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content px-4">
+      <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-gray-100 leading-tight">
+        IA y automatización para que dejes de ser <span class="text-[#9333ea] animate-pulse">esclavo</span> de tu propio negocio.
+      </h2>
+      <p class="text-xl md:text-2xl text-gray-200 font-light mb-10 max-w-3xl mx-auto">Porque si tú paras, <span class="font-semibold text-white">todo se detiene</span>. Y eso no es libertad.</p>
+      <div class="space-x-4">
+        <a class="btn btn-primary text-lg px-8 py-4" href="#contacto">Agenda tu sesión gratuita</a>
+        <a class="btn btn-secondary text-lg px-8 py-4" href="#soluciones">Explorar soluciones</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Problemas -->
+  <section class="section bg-black" id="dolor">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">¿Te sientes identificado?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div class="card"><span class="material-icons icon mb-4">hourglass_empty</span><p>No llegas a todo.</p></div>
+        <div class="card"><span class="material-icons icon mb-4">receipt_long</span><p>Facturas y presupuestos te roban el tiempo.</p></div>
+        <div class="card"><span class="material-icons icon mb-4">sentiment_very_dissatisfied</span><p>El final del trimestre te da ansiedad.</p></div>
+        <div class="card"><span class="material-icons icon mb-4">phonelink_off</span><p>Tus redes sociales están desatendidas.</p></div>
+        <div class="card"><span class="material-icons icon mb-4">mark_email_unread</span><p>Tu bandeja de entrada parece una guerra.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones -->
+  <section class="section scroll-mt-24" id="soluciones" style="background: linear-gradient(to bottom, #0a0118, #000000);">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold">Soluciones para Liberar tu Tiempo</h2>
+        <p class="text-lg text-gray-400 mt-4">Nos encargamos de tareas repetitivas para que te centres en crecer.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Automatización de presupuestos y facturas -->
+        <div class="card text-center">
+          <img src="assets/images/automatizacion_facturas.jpg" alt="Automatización de presupuestos y facturas" class="w-full h-40 object-cover rounded-lg mb-4"/>
+          <h3 class="text-xl font-bold mb-2">Automatización de presupuestos y facturas</h3>
+          <p class="text-gray-400">Registra, genera y envía documentos profesionales en segundos, sin errores ni olvidos.</p>
+        </div>
+        <!-- Emails, agenda y redes sociales automatizadas -->
+        <div class="card text-center">
+          <img src="assets/images/redes_sociales.jpg" alt="Automatización de emails y redes sociales" class="w-full h-40 object-cover rounded-lg mb-4"/>
+          <h3 class="text-xl font-bold mb-2">Emails, agenda y redes sociales automatizadas</h3>
+          <p class="text-gray-400">Respuestas automáticas, publicaciones y programación sin perder energía.</p>
+        </div>
+        <!-- Chatbots 24/7 -->
+        <div class="card text-center">
+          <img src="assets/images/chatbot.jpg" alt="Chatbots para atención 24/7" class="w-full h-40 object-cover rounded-lg mb-4"/>
+          <h3 class="text-xl font-bold mb-2">Chatbots para atención 24/7</h3>
+          <p class="text-gray-400">Soporte al cliente inmediato, sin descanso, ni intermediarios.</p>
+        </div>
+        <!-- Envío a gestoría -->
+        <div class="card text-center">
+          <img src="assets/images/gestoria.jpg" alt="Envío automático a gestoría" class="w-full h-40 object-cover rounded-lg mb-4"/>
+          <h3 class="text-xl font-bold mb-2">Integración con gestoría sin cambiar herramientas</h3>
+          <p class="text-gray-400">Envía facturas automáticamente a tu gestoría sin duplicar tareas.</p>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#contacto" class="btn btn-primary">Quiero automatizar mi negocio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios -->
+  <section class="section bg-black scroll-mt-24" id="beneficios">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">Beneficios que sentirás desde el primer día</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 rounded-full bg-purple-900/30 flex items-center justify-center mb-4 border border-purple-700">
+            <span class="material-icons icon !text-4xl">savings</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Ahorra hasta el 70% de tiempo</h3>
+          <p class="text-gray-400">Dedícalo a lo importante.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 rounded-full bg-purple-900/30 flex items-center justify-center mb-4 border border-purple-700">
+            <span class="material-icons icon !text-4xl">thumb_up_off_alt</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Menos errores humanos</h3>
+          <p class="text-gray-400">Automatización constante y precisa.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 rounded-full bg-purple-900/30 flex items-center justify-center mb-4 border border-purple-700">
+            <span class="material-icons icon !text-4xl">visibility</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Visión clara del negocio</h3>
+          <p class="text-gray-400">Reportes automáticos y mejor toma de decisiones.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-20 h-20 rounded-full bg-purple-900/30 flex items-center justify-center mb-4 border border-purple-700">
+            <span class="material-icons icon !text-4xl">self_improvement</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Más tranquilidad mental</h3>
+          <p class="text-gray-400">Tu negocio funciona incluso cuando no estás.</p>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="#contacto" class="btn btn-primary">Quiero estos beneficios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo trabajamos -->
+  <section class="section" id="how-we-work" style="background: linear-gradient(to top, #1e0a3c, #000000);">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Cómo trabajamos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full bg-purple-900/50 flex items-center justify-center border-2 border-purple-700 text-4xl font-bold text-purple-400">1</div>
+          <h3 class="text-2xl font-semibold mb-3 text-white">Diagnóstico</h3>
+          <p class="text-gray-400">Comenzamos escuchando tus necesidades y objetivos. Entender tu negocio es clave para diseñar soluciones efectivas con IA.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full bg-purple-900/50 flex items-center justify-center border-2 border-purple-700 text-4xl font-bold text-purple-400">2</div>
+          <h3 class="text-2xl font-semibold mb-3 text-white">Auditoría</h3>
+          <p class="text-gray-400">Realizamos una auditoría de tus procesos actuales para detectar oportunidades de automatización y mejora.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full bg-purple-900/50 flex items-center justify-center border-2 border-purple-700 text-4xl font-bold text-purple-400">3</div>
+          <h3 class="text-2xl font-semibold mb-3 text-white">Automatización</h3>
+          <p class="text-gray-400">Implementamos soluciones de IA adaptadas a tus tareas para ganar eficiencia y liberar tiempo.</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="w-24 h-24 rounded-full bg-purple-900/50 flex items-center justify-center border-2 border-purple-700 text-4xl font-bold text-purple-400">4</div>
+          <h3 class="text-2xl font-semibold mb-3 text-white">Soporte</h3>
+          <p class="text-gray-400">Te acompañamos con soporte continuo para asegurar que todo funcione y se mantenga optimizado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan Liberación 30 Días -->
+  <section class="section text-center bg-purple-900/20 scroll-mt-24">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-4">Plan Liberación 30 Días</h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">Resuelve tu tarea más crítica en menos de un mes, sin compromiso.</p>
+      <div class="flex flex-col sm:flex-row justify-center items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
+        <div class="flex items-center"><span class="material-icons text-green-400 mr-2">check_circle</span> Diagnóstico gratuito y sin compromiso.</div>
+        <div class="flex items-center"><span class="material-icons text-green-400 mr-2">check_circle</span> Automatización de una tarea crítica.</div>
+        <div class="flex items-center"><span class="material-icons text-green-400 mr-2">check_circle</span> Soporte vía WhatsApp/Email o presencial.</div>
+      </div>
+      <a href="#contacto" class="btn btn-primary text-lg">Quiero mi diagnóstico gratuito</a>
+    </div>
+  </section>
+
+  <!-- Contacto ACTUALIZADO CON GOOGLE SHEETS -->
+  <section class="section scroll-mt-24" id="contacto" style="background: linear-gradient(to bottom, #1e0a3c, #000000);">
+    <div class="container mx-auto px-4 max-w-lg">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Da el primer paso para recuperar tu tiempo</h2>
+      <p class="text-gray-400 text-center mb-8">Déjanos saber qué te agobia y agendaremos una sesión gratuita para ayudarte.</p>
+      
+      <!-- Formulario conectado a Google Sheets -->
+      <form class="space-y-6" id="contactForm">
+        <!-- Nombre -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-300 mb-1">
+            Nombre <span class="text-red-400">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            minlength="2"
+            maxlength="100"
+            class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300"
+            placeholder="Tu nombre completo"
+            autocomplete="name"
+          />
+          <div class="text-red-400 text-sm mt-1 hidden" id="name-error"></div>
+        </div>
+        
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-300 mb-1">
+            Email <span class="text-red-400">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300"
+            placeholder="tu@email.com"
+            autocomplete="email"
+          />
+          <div class="text-red-400 text-sm mt-1 hidden" id="email-error"></div>
+        </div>
+        
+        <!-- Sector -->
+        <div>
+          <label for="sector" class="block text-sm font-medium text-gray-300 mb-1">
+            Tu sector <span class="text-red-400">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="sector" 
+            name="sector" 
+            required 
+            minlength="2"
+            maxlength="100"
+            class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300"
+            placeholder="Ej: Coach, Tienda Online, Freelancer, Consultor..."
+            list="sector-suggestions"
+          />
+          <datalist id="sector-suggestions">
+            <option value="Coach">
+            <option value="Consultor">
+            <option value="Tienda Online">
+            <option value="E-commerce">
+            <option value="Freelancer">
+            <option value="Autónomo">
+            <option value="Academia Digital">
+            <option value="Formación Online">
+            <option value="Servicios Profesionales">
+            <option value="Restaurante">
+            <option value="Clínica/Consulta">
+            <option value="Agencia de Marketing">
+            <option value="Inmobiliaria">
+          </datalist>
+          <div class="text-red-400 text-sm mt-1 hidden" id="sector-error"></div>
+        </div>
+        
+        <!-- Tarea estresante -->
+        <div>
+          <label for="stress_task" class="block text-sm font-medium text-gray-300 mb-1">
+            ¿Cuál es la tarea que más te estresa? <span class="text-red-400">*</span>
+          </label>
+          <textarea 
+            id="stress_task" 
+            name="stress_task"
+            rows="4" 
+            required
+            minlength="10"
+            maxlength="1000"
+            class="w-full bg-gray-900/50 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-all duration-300 resize-none"
+            placeholder="Ej: Responder emails todo el día, crear facturas manualmente, publicar en redes sociales, gestionar inventario, hacer seguimiento de pagos..."
+          ></textarea>
+          <div class="flex justify-between items-center mt-1">
+            <div class="text-red-400 text-sm hidden" id="stress-task-error"></div>
+            <div class="text-right text-xs text-gray-500">
+              <span id="charCount">0</span>/1000 caracteres
+            </div>
+          </div>
+        </div>
+        
+        <!-- Términos y condiciones -->
+        <div class="flex items-start space-x-3">
+          <input 
+            type="checkbox" 
+            id="terms" 
+            name="terms"
+            required
+            class="mt-1 h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+          />
+          <label for="terms" class="text-sm text-gray-400">
+            Acepto la <a href="/privacidad" class="text-purple-400 hover:text-purple-300 underline">política de privacidad</a> 
+            y el tratamiento de mis datos para recibir información comercial. <span class="text-red-400">*</span>
+          </label>
+        </div>
+        
+        <!-- Botón de envío -->
+        <div class="text-center">
+          <button 
+            type="submit" 
+            class="btn btn-primary w-full sm:w-auto text-lg px-8 py-4 relative overflow-hidden transform transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            id="submitBtn"
+          >
+            <span id="submitText" class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              Quiero liberar mi tiempo ya
+            </span>
+            <span id="submitLoading" class="hidden flex items-center justify-center">
+              <svg class="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Procesando tu consulta...
+            </span>
+          </button>
+        </div>
+      </form>
+      
+      <!-- Mensaje de estado -->
+      <div id="formMessage" class="hidden mt-6 p-4 rounded-lg text-center border transition-all duration-500"></div>
+      
+      <!-- Indicadores de confianza -->
+      <div class="flex justify-center items-center space-x-6 mt-8 text-xs text-gray-500">
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+          </svg>
+          SSL Seguro
+        </div>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"></path>
+          </svg>
+          Datos Protegidos
+        </div>
+        <div class="flex items-center">
+          <svg class="w-4 h-4 mr-1 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path>
+          </svg>
+          Sin Spam
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-8">
+    <div class="container mx-auto px-6 text-center text-gray-500">
+      <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
+        <div class="flex items-center"><span class="material-icons mr-2">verified_user</span> Ética</div>
+        <div class="flex items-center"><span class="material-icons mr-2">visibility</span> Transparencia</div>
+        <div class="flex items-center"><span class="material-icons mr-2">support_agent</span> Soporte Humano</div>
+      </div>
+      <div class="flex justify-center items-center space-x-4 mb-4 text-sm">
+        <a href="mailto:contacto@xpertia.es" class="hover:text-white">contacto@xpertia.es</a>
+        <span>|</span>
+        <a href="#" class="hover:text-white">WhatsApp</a>
+      </div>
+      <div class="text-sm">
+        <p>© 2025 Xpertia. Todos los derechos reservados.</p>
+        <div class="space-x-2 mt-2">
+          <a href="#" class="underline hover:text-white">Política de Privacidad</a>
+          |
+          <a href="#" class="underline hover:text-white">Política de Cookies</a>
+          |
+          <a href="#" class="underline hover:text-white">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // ✅ TU URL REAL YA CONFIGURADA
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBvL9hlKFKBLYmoj3gFhyJ0m4Wh_txF02usE4GuDkyo4eWqfhUyD00opmzktKtare3ng/exec';
+    
+    // Elementos del DOM
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const submitText = document.getElementById('submitText');
+    const submitLoading = document.getElementById('submitLoading');
+    const formMessage = document.getElementById('formMessage');
+    const charCount = document.getElementById('charCount');
+    const stressTaskTextarea = document.getElementById('stress_task');
+    
+    // Elementos de error
+    const errorElements = {
+        name: document.getElementById('name-error'),
+        email: document.getElementById('email-error'),
+        sector: document.getElementById('sector-error'),
+        stressTask: document.getElementById('stress-task-error')
+    };
+    
+    // Contador de caracteres en tiempo real
+    stressTaskTextarea.addEventListener('input', function() {
+        const length = this.value.length;
+        charCount.textContent = length;
+        
+        // Cambiar color según longitud
+        if (length > 900) {
+            charCount.style.color = '#ef4444'; // rojo
+        } else if (length > 800) {
+            charCount.style.color = '#f59e0b'; // amarillo
+        } else if (length < 10) {
+            charCount.style.color = '#ef4444'; // rojo
+        } else {
+            charCount.style.color = '#22c55e'; // verde
+        }
+    });
+    
+    // Validación en tiempo real
+    function setupRealTimeValidation() {
+        // Validación nombre
+        document.getElementById('name').addEventListener('input', function() {
+            validateField('name', this.value.trim().length >= 2, 'El nombre debe tener al menos 2 caracteres');
+        });
+        
+        // Validación email
+        document.getElementById('email').addEventListener('input', function() {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            validateField('email', emailRegex.test(this.value), 'Por favor ingresa un email válido');
+        });
+        
+        // Validación sector
+        document.getElementById('sector').addEventListener('input', function() {
+            validateField('sector', this.value.trim().length >= 2, 'Por favor especifica tu sector');
+        });
+        
+        // Validación tarea estresante
+        stressTaskTextarea.addEventListener('input', function() {
+            validateField('stressTask', this.value.trim().length >= 10, 'Describe la tarea con al menos 10 caracteres');
+        });
+    }
+    
+    // Función para validar campos individuales
+    function validateField(fieldName, isValid, errorMessage) {
+        const field = document.getElementById(fieldName === 'stressTask' ? 'stress_task' : fieldName);
+        const errorElement = errorElements[fieldName];
+        
+        if (isValid) {
+            field.style.borderColor = '#22c55e';
+            field.style.boxShadow = '0 0 0 1px #22c55e';
+            errorElement.textContent = '';
+            errorElement.classList.add('hidden');
+        } else {
+            field.style.borderColor = '#ef4444';
+            field.style.boxShadow = '0 0 0 1px #ef4444';
+            errorElement.textContent = errorMessage;
+            errorElement.classList.remove('hidden');
+        }
+    }
+    
+    // Limpiar estilos de validación
+    function clearValidationStyles() {
+        form.querySelectorAll('input, textarea').forEach(input => {
+            input.style.borderColor = '#6b7280';
+            input.style.boxShadow = 'none';
+        });
+        
+        Object.values(errorElements).forEach(errorEl => {
+            errorEl.classList.add('hidden');
+        });
+    }
+    
+    // Función para mostrar mensajes
+    function showMessage(message, type = 'success', details = null) {
+        const bgColor = type === 'success' ? 'bg-green-50' : 'bg-red-50';
+        const textColor = type === 'success' ? 'text-green-800' : 'text-red-800';
+        const borderColor = type === 'success' ? 'border-green-200' : 'border-red-200';
+        const icon = type === 'success' ? 
+            '<svg class="w-6 h-6 text-green-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>' :
+            '<svg class="w-6 h-6 text-red-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"></path></svg>';
+        
+        let content = `
+            <div class="flex items-start">
+                ${icon}
+                <div class="flex-1">
+                    <p class="font-semibold">${message}</p>
+                    ${details ? `<p class="text-sm mt-1 opacity-80">${details}</p>` : ''}
+                </div>
+            </div>
+        `;
+        
+        formMessage.className = `mt-6 p-4 rounded-lg border ${bgColor} ${textColor} ${borderColor} transition-all duration-500`;
+        formMessage.innerHTML = content;
+        formMessage.classList.remove('hidden');
+        
+        // Scroll hacia el mensaje
+        setTimeout(() => {
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+        
+        // Auto-ocultar mensajes de éxito
+        if (type === 'success') {
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 10000);
+        }
+    }
+    
+    // Función para estado de carga
+    function setLoading(loading) {
+        if (loading) {
+            submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+            submitBtn.classList.remove('hover:scale-105');
+            submitText.classList.add('hidden');
+            submitLoading.classList.remove('hidden');
+        } else {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            submitBtn.classList.add('hover:scale-105');
+            submitText.classList.remove('hidden');
+            submitLoading.classList.add('hidden');
+        }
+    }
+    
+    // Validación completa del formulario
+    function validateForm(data) {
+        let isValid = true;
+        const errors = [];
+        
+        if (!data.name || data.name.trim().length < 2) {
+            errors.push('Nombre requerido (mínimo 2 caracteres)');
+            validateField('name', false, 'El nombre debe tener al menos 2 caracteres');
+            isValid = false;
+        }
+        
+        if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+            errors.push('Email inválido');
+            validateField('email', false, 'Por favor ingresa un email válido');
+            isValid = false;
+        }
+        
+        if (!data.sector || data.sector.trim().length < 2) {
+            errors.push('Sector requerido');
+            validateField('sector', false, 'Por favor especifica tu sector');
+            isValid = false;
+        }
+        
+        if (!data.stress_task || data.stress_task.trim().length < 10) {
+            errors.push('Descripción de tarea estresante muy corta');
+            validateField('stressTask', false, 'Describe la tarea con al menos 10 caracteres');
+            isValid = false;
+        }
+        
+        if (!data.terms) {
+            errors.push('Debes aceptar la política de privacidad');
+            isValid = false;
+        }
+        
+        return { isValid, errors };
+    }
+    
+    // Manejar envío del formulario
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Obtener datos del formulario
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        // Validar formulario
+        const validation = validateForm(data);
+        if (!validation.isValid) {
+            showMessage('Por favor corrige los errores del formulario', 'error', validation.errors.join('. '));
+            return;
+        }
+        
+        setLoading(true);
+        
+        try {
+            // Enviar a Google Apps Script
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Importante para Google Apps Script
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(data)
+            });
+            
+            // Como es no-cors, asumimos éxito si no hay error
+            showMessage(
+                '¡Perfecto! Tu consulta ha sido recibida.',
+                'success',
+                'Te contactaremos en las próximas 24 horas para agendar tu sesión gratuita de diagnóstico. Revisa también tu bandeja de spam por si acaso.'
+            );
+            
+            // Limpiar formulario
+            form.reset();
+            charCount.textContent = '0';
+            clearValidationStyles();
+            
+            // Analytics tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    'event_category': 'contact',
+                    'event_label': 'google_sheets_xpertia',
+                    'value': 1
+                });
+            }
+            
+            // Scroll suave hacia arriba después del éxito
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 3000);
+            
+        } catch (error) {
+            console.error('Error enviando formulario:', error);
+            showMessage(
+                'Hubo un problema al enviar tu consulta',
+                'error',
+                'Por favor inténtalo de nuevo o contáctanos directamente a contacto@xpertia.es'
+            );
+        } finally {
+            setLoading(false);
+        }
+    });
+    
+    // Configurar validación en tiempo real
+    setupRealTimeValidation();
+    
+    // Prevenir envío múltiple
+    let isSubmitting = false;
+    form.addEventListener('submit', function(e) {
+        if (isSubmitting) {
+            e.preventDefault();
+            return;
+        }
+        isSubmitting = true;
+        setTimeout(() => isSubmitting = false, 5000);
+    });
+    
+    // Autocompletar sector basado en dominio de email
+    document.getElementById('email').addEventListener('blur', function() {
+        const email = this.value.toLowerCase();
+        const sectorField = document.getElementById('sector');
+        
+        if (sectorField.value.trim() === '' && email.includes('@')) {
+            const domain = email.split('@')[1];
+            
+            if (domain.includes('gmail') || domain.includes('yahoo') || domain.includes('hotmail')) {
+                // Emails personales - no sugerir
+                return;
+            } else if (domain.includes('coach')) {
+                sectorField.value = 'Coach';
+            } else if (domain.includes('shop') || domain.includes('store')) {
+                sectorField.value = 'Tienda Online';
+            } else if (domain.includes('consult')) {
+                sectorField.value = 'Consultor';
+            }
+        }
+    });
+});
+</script>
+
+</body>
+</html>
